@@ -15,7 +15,7 @@ Instalation
 $ composer install
 $ bin/console doctrine:database:create
 $ bin/console doctrine:schema:create
-$ bin/console server:run
+$ bin/console server:start
 ```
 
 Usage
@@ -23,9 +23,9 @@ Usage
 
 * Create some articles: 
 ```
- $ curl -X POST http://127.0.0.1:8000/v1/articles -d article[title]=orange -d article[body]="Sweet apple" -d article[tags][][name]=fruit
- $ curl -X POST http://127.0.0.1:8000/v1/articles -d article[title]=carrot -d article[body]="Sweet carrot" -d article[tags][][name]=fruit
- $ curl -X POST http://127.0.0.1:8000/v1/articles -d article[title]=olives -d article[body]="Virgin olives" -d article[tags][][name]=oil
+ $ curl -X POST http://127.0.0.1:8000/v1/articles -d article[title]=Orange -d article[body]="Sweet apple" -d article[tags][][name]=fruit
+ $ curl -X POST http://127.0.0.1:8000/v1/articles -d article[title]=Carrot -d article[body]="Sweet carrot" -d article[tags][][name]=fruit
+ $ curl -X POST http://127.0.0.1:8000/v1/articles -d article[title]=Olives -d article[body]="Virgin olives" -d article[tags][][name]=oil
 ```
 
 * Get list of all articles:
