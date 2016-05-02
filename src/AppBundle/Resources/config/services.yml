@@ -1,0 +1,14 @@
+services:
+
+  # Tags service
+  app.tags:
+    class: AppBundle\Service\TagService
+    arguments: ["@doctrine.orm.entity_manager", "@jms_serializer"]
+
+  # Article form type service
+  app.form.field.type.article:
+    class: AppBundle\Form\ArticleType
+    arguments:
+      - "@doctrine.orm.entity_manager"
+    tags:
+      - { name: form.type }
