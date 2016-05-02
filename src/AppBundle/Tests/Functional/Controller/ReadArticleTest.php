@@ -38,20 +38,12 @@ class ReadArticleTest extends FunctionalTestCase
     }
 
     /**
-     * Set up.
-     */
-    public function setUp()
-    {
-        parent::setUp();
-
-        $this->populateDataBaseWithSampleData($this->createSampleData());
-    }
-
-    /**
      * When requesting without id, all articles should be returned.
      */
     public function testReadAllProducts()
     {
+        $this->populateDataBaseWithSampleData($this->createSampleData());
+
         $this->client->request('GET', '/v1/articles');
         $response = $this->client->getResponse();
 
