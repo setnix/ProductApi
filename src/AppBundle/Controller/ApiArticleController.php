@@ -7,10 +7,8 @@ use AppBundle\Entity\Article;
 use AppBundle\Form\ArticleType;
 use AppBundle\Repository\ArticleRepository;
 use FOS\RestBundle\Request\ParamFetcher;
-use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations\QueryParam;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
@@ -134,18 +132,6 @@ class ApiArticleController extends ApiController
     }
 
     /**
-     * Persist entity to data store.
-     *
-     * @param Article $entity
-     */
-    protected function persist(Article $entity)
-    {
-        $entityManager = $this->get('doctrine.orm.entity_manager');
-        $entityManager->persist($entity);
-        $entityManager->flush();
-    }
-
-    /**
      * Get article repository.
      *
      * @return ArticleRepository
@@ -155,17 +141,5 @@ class ApiArticleController extends ApiController
         $entityManager = $this->get('doctrine.orm.entity_manager');
 
         return $entityManager->getRepository('AppBundle:Article');
-    }
-
-    /**
-     * Validate form.
-     *
-     * @param FormInterface $form
-     */
-    protected function validateRequest(FormInterface $form)
-    {
-        if (!$form->isValid()) {
-            throw new HttpException(400, $form->getErrors(true, false));
-        }
     }
 }
