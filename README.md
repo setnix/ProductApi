@@ -33,7 +33,7 @@ Usage
  $ curl -X GET http://127.0.0.1:8000/v1/articles
 ```
 
-* Get list of single article:
+* Get single article data:
 ```
  $ curl -X GET http://127.0.0.1:8000/v1/articles/{id}
 ```
