@@ -74,7 +74,7 @@ class Article
 
     /**
      * Date of creation.
-     * Date format is UTC with time zone support for correct date-time output in different countries.
+     * Date format is UTC with timezone support for correct date-time output in different countries.
      *
      * @var \DateTime
      *
@@ -82,7 +82,7 @@ class Article
      *
      * @ORM\Column(
      *     name="createdAt",
-     *     type="datetimetz"
+     *     type="datetime"
      * )
      *
      * @JMS\Expose

@@ -50,6 +50,8 @@ doctrine:
         charset:  UTF8
         mapping_types:
             enum: string
+        types:
+            datetime: AppBundle\DoctrineExtensions\DBAL\Types\UTCDateTimeType
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         entity_managers:
