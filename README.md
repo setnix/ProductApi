@@ -8,7 +8,7 @@ Requirements
   * MySQL 5.5 or above
   * Composer 1.2-dev or above
 
-Instalation
+Installation
 -----------
 
 ``` 
